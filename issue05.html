@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Paradigm</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/imgfavicon-16x16.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	</head>
+	<body style ="background-color:#faf9f9;" onload ="start()">
+		<div class="loader"></div>
+
+		<h1 class="prompt-title">  select a background <br>context to <br>place it </h1>
+		<h3 class="prompt-subtitle">Drag and drop and play with sizing and rotation and press
+</h3>
+
+		<div  class="prompt-timer" id = "qaq"><a href="#" class="button" onclick="timer()">START</a></div>
+		<h4 class="prompt-timer" style="padding-top: 2%">00:00</h4>
+		<div  style= "padding-left: 12%" id="datetime"> </div>
+
+		<script>
+		var num = 0;
+		var audio = new Audio('music/G4C.mp3');
+		var h4 = document.getElementsByTagName('h4')[0];
+		var poster = document.getElementById('datetime');
+		//var qaq = document.getElementById('qaq');
+		var seconds = 4, minutes = 0, hours = 0;
+		var t;
+		function myFunction() {
+					
+		}
+		function add() {
+				seconds--;
+				if (seconds< 0) {
+						seconds = 59;
+							minutes--; }
+				if(minutes < 0) {
+					minutes = 0;
+					seconds = 0;
+					h4.textContent = "";
+					poster.innerHTML += ('<a href="gallery.html" class="button" style="margin-left:-5%">NEXT</a>');
+				
+				}else{
+				h4.textContent =  (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+				timer();
+				}
+								}
+		function start(){
+			var h4 = document.getElementsByTagName('h4')[0];
+			h4.style.display= 'none';
+			
+			
+		}
+			function timer(){
+		var h4 = document.getElementsByTagName('h4')[0];
+			h4.style.display= 'block';
+		var div = document.getElementsByTagName('div')[1];
+			div.style.display= 'none';
+			t = setTimeout(add, 1000);
+		}												
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+		<script>
+		// Initialize Firebase
+		var config = {
+		apiKey: "AIzaSyBQdoWaXa7sQR4ygDgRIWKgPvro8lGr0Jg",
+		authDomain: "paradigm-a42bc.firebaseapp.com",
+		databaseURL: "https://paradigm-a42bc.firebaseio.com",
+		projectId: "paradigm-a42bc",
+		storageBucket: "paradigm-a42bc.appspot.com",
+		messagingSenderId: "745403935875"
+		};
+		firebase.initializeApp(config);
+		</script>
+		<script>
+			var database = firebase.database();
+			var ref = database.ref('StartPage');
+			
+			function myFunction() {
+			firebase.database().ref().child('startStatus').set(1);
+				}
+				
+				
+			function myFunct() {
+			var x = document.getElementById("myNumber").value;
+			firebase.database().ref().child('startCount').set(parseInt(x));
+			window.location.href = "index.html"
+				}
+		</script>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<defs>
+			<filter id="goo">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+			<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+			<feBlend in="SourceGraphic" in2="goo" />
+			</filter>
+			</defs>
+		</svg>
+		<script type="text/javascript">
+      $(window).load(function() {
+        $(".loader").fadeOut("slow");
+      });
+    </script>
+	</body>
+</html>

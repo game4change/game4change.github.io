@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <title>Paradigm</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imgfavicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<embed src="music/inspire.mp3" width="180" height="90" loop="true" autostart="true" hidden="true" />
+ 
+<body class="phone-color" onload="timer()">
+<div class="loader"></div>
+<embed    src="music/start.mp3" loop="false" hidden="true" autostart="true">
+<!-- 
+<audio autoplay loop>
+      <source  src="music/start.mp3">
+</audio>
+ -->
+
+<h1 class="start-title"> INCOMING CALL</h1>
+    <div> <img class="phone-icon" src = "img/piggy-icon2.png"> </img> </div>
+    <h2 class="phone-title"> PIGGY BANKSY </h2>
+    <h4  class="start-title white">00:00</h4>
+	<div class="center" id="datetime"> </div>
+
+
+ 	<script>
+						var h4 = document.getElementsByTagName('h4')[0];
+					    var poster = document.getElementById('datetime');
+						var seconds = 0, minutes = 0, hours = 0;
+						var t;
+						function myFunction() {
+									
+						}
+						function add() {
+								 seconds++;
+								 if (seconds > 59) {
+										   seconds = 0;
+											  minutes++; }
+								if(seconds == 5) {
+								 h4.textContent = "";
+								 poster.innerHTML += ('<a href="issue01-display.html" class="button">Call end</a>');
+								}
+								else{
+								 h4.textContent =  (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+								timer();
+								}
+											}	
+					function timer(){	
+  					 t = setTimeout(add, 1000);	
+					}
+											
+						</script>
+
+ 
+<script type="text/javascript">
+      $(window).load(function() {
+        $(".loader").fadeOut("slow");
+      });
+    </script>
+</body>
+
+</html>

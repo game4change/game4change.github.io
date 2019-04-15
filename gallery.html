@@ -1,0 +1,171 @@
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>Paradigm</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imgfavicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+</head>
+
+<body style="background-color: #ff85c0">
+<div class="loader"></div>
+<div class="slider-wrapper">
+  <div class="slider" id = "content">
+    <div id = "0"></div>
+	<div   class="slider--item" id = "1">
+    </div>
+     <div  class="slider--item" id = "2">
+    </div>
+     <div  class="slider--item" id = "3">
+    </div>
+     <div  class="slider--item" id = "4">
+    </div>
+     <div  class="slider--item" id = "5">
+    </div>
+     <div  class="slider--item" id = "6">
+    </div>
+     <div  class="slider--item" id = "7">
+    </div>
+     <div  class="slider--item" id = "8">
+    </div>
+     <div  class="slider--item" id = "9">
+    </div>
+     <div  class="slider--item" id = "10">
+    </div>
+     <div  class="slider--item" id = "11">
+    </div>
+     <div  class="slider--item" id = "12">
+    </div>
+     <div  class="slider--item" id = "13">
+    </div>
+    <div  class="slider--item" id = "14">
+    </div>
+    <div  class="slider--item" id = "15">
+    </div>
+  </div>
+</div>
+<a href="phone03.html" class="button" style="position: fixed;right:20px;bottom: 20px;z-index: 1000000">NEXT</a> 
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
+
+  
+
+<script  src="js/index.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBQdoWaXa7sQR4ygDgRIWKgPvro8lGr0Jg",
+    authDomain: "paradigm-a42bc.firebaseapp.com",
+    databaseURL: "https://paradigm-a42bc.firebaseio.com",
+    projectId: "paradigm-a42bc",
+    storageBucket: "paradigm-a42bc.appspot.com",
+    messagingSenderId: "745403935875"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+
+ function setup() { 
+var database = firebase.database();
+var ref = database.ref('devices');
+ref.on('value', gotData,errData);
+function gotData(data){
+	 var scores = data.val();
+	 var keys = Object.keys(scores);
+ 	 var content = document.getElementById('0');
+ 	 var content1 = document.getElementById('1');
+ 	 var content2 = document.getElementById('2');
+ 	 var content3 = document.getElementById('3');
+	var content4 = document.getElementById('4');
+	var content5 = document.getElementById('5');
+	var content6 = document.getElementById('6');
+	var content7 = document.getElementById('7');
+	var content8 = document.getElementById('8');
+	var content9 = document.getElementById('9');
+	var content10 = document.getElementById('10');
+	var content11 = document.getElementById('11');
+	var content12 = document.getElementById('12');
+	var content13 = document.getElementById('13');
+	var content14 = document.getElementById('14');
+	var content15 = document.getElementById('15');
+     for (var i = 0; i < keys.length; i++){
+	 	var k = keys[i];
+ 	  if(i==0){
+ 	 content.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	  if(i==1){
+ 	 content1.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==2){
+ 	 content2.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==3){
+ 	 content3.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==4){
+ 	 content4.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==5){
+ 	 content5.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==6){
+ 	 content6.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+	if(i==7){
+ 	 content7.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==8){
+ 	 content8.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==9){
+ 	 content9.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	  if(i==10){
+ 	 content10.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	  if(i==11){
+ 	 content11.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	  if(i==12){
+ 	 content12.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	  if(i==13){
+ 	 content13.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	  if(i==14){
+ 	 content14.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 if(i==15){
+ 	 content15.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
+ 	 }
+    }
+ 	
+ 	 
+function errData(data){
+	 alert("ERROR!" );
+}
+
+}
+
+	window.onload = setup();
+ 	 
+ 	 </script>
+     <script type="text/javascript">
+      $(window).load(function() {
+        $(".loader").fadeOut("slow");
+      });
+    </script>
+</body>
+
+</html>
