@@ -19,17 +19,37 @@
 		<h4 class="prompt-timer" style="padding-top: 2%">00:00</h4>
 		<div  style= "padding-left: 12%" id="datetime"> </div>
 
+
+
+		
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyBQdoWaXa7sQR4ygDgRIWKgPvro8lGr0Jg",
+    authDomain: "paradigm-a42bc.firebaseapp.com",
+    databaseURL: "https://paradigm-a42bc.firebaseio.com",
+    projectId: "paradigm-a42bc",
+    storageBucket: "paradigm-a42bc.appspot.com",
+    messagingSenderId: "745403935875"
+    };
+    firebase.initializeApp(config);
+    </script>
 		<script>
 		var num = 0;
 		var audio = new Audio('music/G4C.mp3');
 		var h4 = document.getElementsByTagName('h4')[0];
 		var poster = document.getElementById('datetime');
 		//var qaq = document.getElementById('qaq');
-		var seconds = 0, minutes = 5, hours = 0;
+		var seconds = 3, minutes = 0, hours = 0;
 		var t;
+		var database = firebase.database();
+		
+		
 		function myFunction() {
-					
+			//firebase.database().ref().child('startStatus').set(1);
 		}
+		
 		function add() {
 				seconds--;
 				if (seconds< 0) {
@@ -49,9 +69,8 @@
 		function start(){
 			var h4 = document.getElementsByTagName('h4')[0];
 			h4.style.display= 'none';
-			
-			
-		}
+			firebase.database().ref().child('page4').set(1);
+				}
 			function timer(){
 		var h4 = document.getElementsByTagName('h4')[0];
 			h4.style.display= 'block';
@@ -60,34 +79,7 @@
 			t = setTimeout(add, 1000);
 		}												
 		</script>
-		<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-		<script>
-		// Initialize Firebase
-		var config = {
-		apiKey: "AIzaSyBQdoWaXa7sQR4ygDgRIWKgPvro8lGr0Jg",
-		authDomain: "paradigm-a42bc.firebaseapp.com",
-		databaseURL: "https://paradigm-a42bc.firebaseio.com",
-		projectId: "paradigm-a42bc",
-		storageBucket: "paradigm-a42bc.appspot.com",
-		messagingSenderId: "745403935875"
-		};
-		firebase.initializeApp(config);
-		</script>
-		<script>
-			var database = firebase.database();
-			var ref = database.ref('StartPage');
-			
-			function myFunction() {
-			firebase.database().ref().child('startStatus').set(1);
-				}
-				
-				
-			function myFunct() {
-			var x = document.getElementById("myNumber").value;
-			firebase.database().ref().child('startCount').set(parseInt(x));
-			window.location.href = "index.html"
-				}
-		</script>
+	
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 			<defs>
 			<filter id="goo">

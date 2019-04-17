@@ -22,11 +22,33 @@
 
   <div align="center" class="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon"><br><br><br><br><br>
 <!--       <div class="phonering-alo-ph-circle-fill">
- -->      <a href="answercall.html" class="pps-btn-img">
+ -->      <a onclick= "myFunction()" href="answercall.html" class="pps-btn-img">
         <div class="phonering-alo-ph-img-circle"></div>
       </a>
       <!-- </div> -->
   </div>    
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyBQdoWaXa7sQR4ygDgRIWKgPvro8lGr0Jg",
+    authDomain: "paradigm-a42bc.firebaseapp.com",
+    databaseURL: "https://paradigm-a42bc.firebaseio.com",
+    projectId: "paradigm-a42bc",
+    storageBucket: "paradigm-a42bc.appspot.com",
+    messagingSenderId: "745403935875"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script>
+      var database = firebase.database();
+      var ref = database.ref('StartPage');
+      
+      function myFunction() {
+      firebase.database().ref().child('page3').set(1);
+        }
+        
+    </script>
     
   <script type="text/javascript">
       $(window).load(function() {

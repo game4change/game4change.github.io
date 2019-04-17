@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="background-color: #ff85c0">
+<body style="background-color: #ff85c0" >
 <div class="loader"></div>
 <div class="slider-wrapper">
   <div class="slider" id = "content">
@@ -73,6 +73,7 @@
 
  function setup() { 
 var database = firebase.database();
+firebase.database().ref().child('page21').set(1);
 var ref = database.ref('devices');
 ref.on('value', gotData,errData);
 function gotData(data){
