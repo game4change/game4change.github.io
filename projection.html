@@ -53,15 +53,7 @@
 
  function setup() { 
 var database = firebase.database();
-firebase.database().ref().child('startCount').set(0);
-firebase.database().ref().child('page3').set(0);
-firebase.database().ref().child('page4').set(0);
-firebase.database().ref().child('page8').set(0);
-firebase.database().ref().child('page12').set(0);
-firebase.database().ref().child('page13').set(0);
-firebase.database().ref().child('page15').set(0);
-firebase.database().ref().child('page17').set(0);
-firebase.database().ref().child('page21').set(0);
+firebase.database().ref().child('startStatus').set(0);
 var ref = database.ref('devices');
 ref.on('value', gotData,errData);
 
