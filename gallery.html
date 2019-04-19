@@ -98,7 +98,10 @@ function gotData(data){
 	var content15 = document.getElementById('15');
      for (var i = 0; i < 15; i++){
 	 	var k = keys[i];
-	
+	if(scores[k].img == null) {
+	 alert("Warning: There is player who did not submit");
+	}
+	else{
  	  if(i==0&& i<num){
  	 	content.innerHTML += ('<img src="'+scores[k].img+'">');
  	 	}
@@ -158,6 +161,7 @@ function gotData(data){
  	 }
  	 if(i==15&& i<num){
  	 content15.innerHTML += ('<img src="'+scores[k].img+'">');
+ 	 }
  	 }
  	 }
  	 // else{

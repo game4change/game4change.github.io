@@ -58,6 +58,7 @@ function gotData(data){
 	 var keys = Object.keys(scores);
 
  	 var poster = document.getElementById('poster');
+ 	  var test = document.getElementById('test');
 
 		var ariel = "a";
 		var zoe = "z" ; 
@@ -66,7 +67,16 @@ function gotData(data){
 		var sau = "s";
 	 for (var i = 0; i < keys.length; i++){
  	 	var k = keys[i];
+ 	 	if(scores[k].issue== null) {
+ 	  	test.innerHTML +=(" / NULL");
+
+ 	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
+ 	    var tall = document.getElementById(ariel);
+ 	 	tall.innerHTML += ( '<div class="issue-poster-front style-04-front"></div>'); 
+ 	 	ariel+="a";
+ 		}
  	 	if(scores[k].issue.length <= 4 ) {
+ 	 	test.innerHTML +=(" / "+scores[k].issue);
  	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
  	    var tall = document.getElementById(ariel);
  	 	tall.innerHTML += ( '<div class="issue-poster-front style-04-front">'+scores[k].issue+'</div>'); 
@@ -74,6 +84,7 @@ function gotData(data){
  		}
  		
  		if(scores[k].issue.length > 4 && scores[k].issue.length < 7) {
+ 		test.innerHTML +=(" / "+scores[k].issue);
      	poster.innerHTML += ('<div class="issue-poster-back style-0811-back" id='+ zoe +'></div>');
      	var grande = document.getElementById(zoe);
      	grande.innerHTML += ('<div class="issue-poster-front style-0811-front">'+scores[k].issue+'&nbsp;'+'<b style="color: #faf9f9">'+scores[k].issue+'&nbsp;'+'</b>'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;');
@@ -81,6 +92,7 @@ function gotData(data){
  		}
  		
  		if(scores[k].issue.length >= 7 && scores[k].issue.length <= 11) {
+ 		test.innerHTML +=(" / "+scores[k].issue);
   		 poster.innerHTML += ('  <div class="issue-poster-back style-0507-back" id='+boyi +'></div>');
   		 var venti = document.getElementById(boyi);
   	     venti.innerHTML += ('<div class="issue-poster-front style-0507-front">' +scores[k].issue +scores[k].issue+scores[k].issue+scores[k].issue+'<b style="color: #FF85C1">'+scores[k].issue+'</b>' +scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+'</div>');
@@ -88,6 +100,7 @@ function gotData(data){
   	      }
   	      
   	     if(scores[k].issue.length > 11 && scores[k].issue.length < 17) {
+  	     test.innerHTML +=(" / "+scores[k].issue);
   	     poster.innerHTML += ('<div class="issue-poster-back style-1217-back" id= '+tera +'></div>');
   	     var tranta = document.getElementById(tera);
   	     var q;
@@ -105,6 +118,8 @@ function gotData(data){
 
   	      
   	      if(scores[k].issue.length >= 17) {
+  	       		test.innerHTML +=(" / "+scores[k].issue);
+
   	       poster.innerHTML += ('  <div class="issue-poster-back style-1828-back" id='+ sau +'></div>');
   	       var party = document.getElementById(sau);
     	 	party.innerHTML += ('<div class="issue-poster-front style-1828-front">'+scores[k].issue+'</div>'); 
@@ -113,11 +128,16 @@ function gotData(data){
   	       }
   	      
 
- var test = document.getElementById('test');
-	 for (var j = 0; j < keys.length; j++){
- 	 	var index = keys[j];
- 	 	test.innerHTML +=(" / "+scores[index].issue);
- 	 	}
+
+	//  for (var j = 0; j < keys.length; j++){
+//  	 	var index = keys[j];
+//  	 	var words = scores[index].issue;
+//  	 	if(scores[index].issue == null) {
+//  	 	alert("null");
+//  	 	words = "";
+//  	 	}
+//  	 	test.innerHTML +=(" / "+words);
+//  	 	}
 
 	 
 }
@@ -135,6 +155,7 @@ function errData(data){
     $(".loader").fadeOut("slow");
   });
 </script>
+
 
 </body>
 </html>
