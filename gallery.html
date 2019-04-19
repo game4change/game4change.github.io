@@ -98,130 +98,110 @@ function gotData(data){
 	var content15 = document.getElementById('15');
      for (var i = 0; i < 15; i++){
 	 	var k = keys[i];
-	if(scores[k].posterimg == null) {
-	 alert("Warning: There is player who did not submit");
-	}
-	else{
+		if(scores[k].posterimg == null) {
+		 alert("Warning: There is player who did not submit");
+		}
  	  if(i==0&& i<num){
  	 	content.innerHTML += ('<img src="'+scores[k].posterimg+'">');
  	 	}
- 	 	else{
- 	  content.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
- 	 }
- 	  if(i==1&& i<num){
+ 	 	if(i==0&& i>=num){
+ 	  	content.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 	   if(i==1&& i<num){
  	 	content1.innerHTML += ('<img src="'+scores[k].posterimg+'">');
  	 	}
- 	 	else{
- 	  content1.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
- 	 }
+ 	 	if(i==1&& i>=num){
+ 	  	content1.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
  	 if(i==2&& i<num){
  	 content2.innerHTML += ('<img src="'+scores[k].posterimg+'">');
  	 }
- 	 else{
- 	  content2.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
- 	 }
- 	 if(i==3&& i<num){
- 	 content3.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	 else{
- 	  content3.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
- 	 }
- 	 if(i==4&& i<num){
- 	 content4.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	  else{
- 	  content4.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
- 	 }
- 	 if(i==5&& i<num){
- 	 content5.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	  else{
- 	  content5.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
- 	 }
- 	 if(i==6&& i<num){
- 	 content6.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
-	if(i==7&& i<num){
- 	 content7.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	 if(i==8&& i<num){
- 	 content8.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	 if(i==9&& i<num){
- 	 content9.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	  if(i==10&& i<num){
- 	 content10.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	  if(i==11&& i<num){
- 	 content11.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	  if(i==12&& i<num){
- 	 content12.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	  if(i==13&& i<num){
- 	 content13.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	  if(i==14&& i<num){
- 	 content14.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	 if(i==15&& i<num){
- 	 content15.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 }
- 	 }
- 	 }
- 	 // else{
-//  	 if(i==0){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+ 	 	if(i==2&& i>=num){
+ 	  	content2.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		 if(i==3&& i<num){
+ 		 content3.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 		 }
+ 	 	if(i==3&& i>=num){
+ 	  	content3.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		 if(i==4&& i<num){
+ 		 content4.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 		 }
+ 	 	if(i==4&& i>=num){
+ 	  	content4.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		 if(i==5&& i<num){
+ 		 content5.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	   	if(i==5&& i>=num){
+ 	  	content5.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 	
+//  		 if(i==6&& i<num){
+//  	 	content6.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+//  	 	}
+//  	 	if(i==6&& i>=num){
+//  	  	content6.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+// 	if(i==7&& i<num){
+//  	 content7.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	  if(i==1){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	 if(i==7&& i>=num){
+//  	  	content7.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	 if(i==8&& i<num){
+//  	 content8.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	 if(i==2){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	 if(i==8&& i>=num){
+//  	  	content8.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	 if(i==9&& i<num){
+//  	 content9.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	 if(i==3){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	 if(i==9&& i>=num){
+//  	  	content9.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	  if(i==10&& i<num){
+//  	 content10.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	 if(i==4){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	 if(i==10&& i>=num){
+//  	  	content10.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	  if(i==11&& i<num){
+//  	 content11.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	 if(i==5){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	 if(i==11&& i>=num){
+//  	  	content11.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	  if(i==12&& i<num){
+//  	 content12.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	 if(i==6){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	  if(i==12&& i>=num){
+//  	  	content12.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	  if(i==13&& i<num){
+//  	 content13.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-// 	if(i==7){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	   if(i==13&& i>=num){
+//  	  	content13.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	  if(i==14&& i<num){
+//  	 content14.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	 if(i==8){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
+//  	  if(i==14&& i>=num){
+//  	  	content14.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	 if(i==15&& i<num){
+//  	 content15.innerHTML += ('<img src="'+scores[k].posterimg+'">');
 //  	 }
-//  	 if(i==9){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
-//  	 }
-//  	  if(i==10){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
-//  	 }
-//  	  if(i==11){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
-//  	 }
-//  	  if(i==12){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
-//  	 }
-//  	  if(i==13){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
-//  	 }
-//  	  if(i==14){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
-//  	 }
-//  	 if(i==15){
-//  	 content.innerHTML += ('<img src="http://www.gamesforchange.org/refresh2018/wp-content/themes/games4change/library/images/headers/gfc-header-logo.png">');
-//  	 }
- 	 
- 	 
- 	 
+//  	 if(i==15&& i>=num){
+//  	  	content15.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
+//  	 
+//  	 
+ 	 }
+
  	 
     }
  	

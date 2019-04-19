@@ -67,15 +67,16 @@ function gotData(data){
 		var sau = "s";
 	 for (var i = 0; i < keys.length; i++){
  	 	var k = keys[i];
- 	 	if(scores[k].issue== null) {
- 	  	test.innerHTML +=(" / NULL");
-
- 	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
- 	    var tall = document.getElementById(ariel);
- 	 	tall.innerHTML += ( '<div class="issue-poster-front style-04-front"></div>'); 
- 	 	ariel+="a";
- 		}
- 	 	if(scores[k].issue.length <= 4 ) {
+ 	 // 	if(scores[k].issue == null) {
+//  	 	alert("null");
+//  	  	test.innerHTML +=(" / NULL");
+//  	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
+//  	    var tall = document.getElementById(ariel);
+//  	 	tall.innerHTML += ( '<div class="issue-poster-front style-04-front"></div>'); 
+//  	 	ariel+="a";
+//  		}
+ 		
+ 	 	if(scores[k].issue != null && scores[k].issue.length <= 4 ) {
  	 	test.innerHTML +=(" / "+scores[k].issue);
  	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
  	    var tall = document.getElementById(ariel);
@@ -83,7 +84,7 @@ function gotData(data){
  	 	ariel+="a";
  		}
  		
- 		if(scores[k].issue.length > 4 && scores[k].issue.length < 7) {
+ 		if( scores[k].issue != null && scores[k].issue.length > 4 && scores[k].issue.length < 7) {
  		test.innerHTML +=(" / "+scores[k].issue);
      	poster.innerHTML += ('<div class="issue-poster-back style-0811-back" id='+ zoe +'></div>');
      	var grande = document.getElementById(zoe);
@@ -91,7 +92,7 @@ function gotData(data){
   		zoe+="z";
  		}
  		
- 		if(scores[k].issue.length >= 7 && scores[k].issue.length <= 11) {
+ 		if(scores[k].issue != null && scores[k].issue.length >= 7 && scores[k].issue.length <= 11) {
  		test.innerHTML +=(" / "+scores[k].issue);
   		 poster.innerHTML += ('  <div class="issue-poster-back style-0507-back" id='+boyi +'></div>');
   		 var venti = document.getElementById(boyi);
@@ -99,7 +100,7 @@ function gotData(data){
   	     boyi+="b"
   	      }
   	      
-  	     if(scores[k].issue.length > 11 && scores[k].issue.length < 17) {
+  	     if(scores[k].issue != null && scores[k].issue.length > 11 && scores[k].issue.length < 17) {
   	     test.innerHTML +=(" / "+scores[k].issue);
   	     poster.innerHTML += ('<div class="issue-poster-back style-1217-back" id= '+tera +'></div>');
   	     var tranta = document.getElementById(tera);
@@ -117,7 +118,7 @@ function gotData(data){
   	      }
 
   	      
-  	      if(scores[k].issue.length >= 17) {
+  	      if(scores[k].issue != null && scores[k].issue.length >= 17) {
   	       		test.innerHTML +=(" / "+scores[k].issue);
 
   	       poster.innerHTML += ('  <div class="issue-poster-back style-1828-back" id='+ sau +'></div>');
