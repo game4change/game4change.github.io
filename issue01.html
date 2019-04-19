@@ -15,9 +15,11 @@
 		<div class="loader"></div>
 		<h1 class="prompt-title">INDIVIDUALLY WRITE <br> 3 ISSUES</b> YOU ARE <br>PASSIONATE ABOUT </h1>
 		<h3 class="prompt-subtitle">Pass the iPad around to all members of your table group</h3>
-		<div  class="prompt-timer" id = "qaq"><a href="#" class="button" onclick="timer()">START</a></div>
+		<div  class="prompt-timer" ><a href="#" class="button" onclick="timer()">START</a> </div>
 		<h4 class="prompt-timer" style="padding-top: 2%">00:00</h4>
-		<div  style= "padding-left: 12%" id="datetime"> </div>
+		 <a href="issue02.html" class="button" style="margin-left:7.8%; margin-top:1%">NEXT</a>
+		<div  style= "padding-left: 12%" id="datetime"> </div> 
+		
 
 
 
@@ -40,7 +42,7 @@
 		var audio = new Audio('music/G4C.mp3');
 		var h4 = document.getElementsByTagName('h4')[0];
 		var poster = document.getElementById('datetime');
-		//var qaq = document.getElementById('qaq');
+		var qaq = document.getElementById('qaq');
 		var seconds = 0, minutes = 3, hours = 0;
 		var t;
 		var database = firebase.database();
@@ -59,7 +61,6 @@
 					minutes = 0;
 					seconds = 0;
 					h4.textContent = "";
-					poster.innerHTML += ('<a href="issue02.html" class="button" style="margin-left:-5%">NEXT</a>');
 				
 				}else{
 				h4.textContent =  (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
@@ -74,7 +75,7 @@
 			function timer(){
 		var h4 = document.getElementsByTagName('h4')[0];
 			h4.style.display= 'block';
-		var div = document.getElementsByTagName('div')[1];
+		var div = document.getElementsByTagName('a')[0];
 			div.style.display= 'none';
 			t = setTimeout(add, 1000);
 		}												
