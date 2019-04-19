@@ -39,7 +39,7 @@
     </script>
 		<script>
 		var num = 0;
-		var audio = new Audio('music/G4C.mp3');
+		var audio = new Audio('music/start.mp3');
 		var h4 = document.getElementsByTagName('h4')[0];
 		var poster = document.getElementById('datetime');
 		var qaq = document.getElementById('qaq');
@@ -73,6 +73,7 @@
 			firebase.database().ref().child('startStatus').set(2);
 				}
 			function timer(){
+			audio.play();
 		var h4 = document.getElementsByTagName('h4')[0];
 			h4.style.display= 'block';
 		var div = document.getElementsByTagName('a')[0];
