@@ -52,6 +52,10 @@ a{
 .back-img img{
     max-width: 450px;
 }
+
+mark{
+    background-color: #D5FF3E;
+}
 /*START*/
 
 .start-icon{
