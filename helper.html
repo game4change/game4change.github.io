@@ -93,7 +93,7 @@
       var issueNum = 0;
       var imgNum = 0;
       
-      var cur = "";
+      var cur = "Waiting Screen";
       var devices ;
       
 function setup() { 
@@ -169,9 +169,7 @@ window.onload = setup();
    		if(snapshot.val()  ==  7  ) {
    			cur = "Place your poster into background";
    		}
-   		else{
-   		cur = "Waiting Screen";
-   		}
+   		
         page.innerHTML = ("Now you are on: <br>" +  cur);
 	}, function (error) {
    console.log("Error: " + error.code);
