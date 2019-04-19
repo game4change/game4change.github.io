@@ -55,51 +55,17 @@
   <body style ="background-color:#faf9f9; ">
   <div class="loader"></div>
     <div align="center">
+<!-- 
       <img class="start-icon" src="img/pig.png">
-      <h1  class="start-title"> PIGGY BANKSY </h1>
-      <a href="story.html" class="button" style="margin-top: 4%" onclick="myFunction()">START</a> 
-            <a id="myBtn" href="#" class="button" style="margin-top: 4%; background-color: #fff">info</a>
-      <!-- The Modal -->
-<div id="myModal" class="modal">
+ -->
+      <h1  class="start-title"> PIGGY BANKSY HELPER </h1>
+        <h4 style="padding-top: 4%" id ="page"> </h4>
+          <h4 style="padding-top: 4%" id = "issue"> </h4>
+          <h4 style="padding-top: 4%" id = "img"> </h4>
+        <h4 style="padding-top: 4%" id = "posterimg"> </h4>
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-    <p>Some text in the Modal..</p>
-     <p>Some text in the Modal..</p>
-      <p>Some text in the Modal..</p>
-       <p>Some text in the Modal..</p>
-  </div>
-  <script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-</div>
+     <!--  <a href="phone01.html" class="button" style="margin-top: 4%" >START</a>  -->
+		<h>
 
     </div>
 
@@ -119,10 +85,100 @@ window.onclick = function(event) {
     <script>
       var database = firebase.database();
       var ref = database.ref('StartPage');
+      var page = document.getElementById('page');
+      var issue = document.getElementById('issue');
+      var posterimg = document.getElementById('posterimg');
+      var img = document.getElementById('img');
+      var ref = firebase.database().ref().child('startStatus');
+      var issueNum = 0;
+      var imgNum = 0;
       
-      function myFunction() {
-      firebase.database().ref().child('startStatus').set(1);
-        }
+      var cur = "";
+      var devices ;
+      
+function setup() { 
+var database = firebase.database();
+var ref = database.ref('devices');
+ref.on('value', gotData,errData);
+
+function gotData(data){
+	 var scores = data.val();
+	 var keys = Object.keys(scores);
+	var devices = keys.length;
+		
+	 for (var i = 0; i < keys.length; i++){
+ 	 	var k = keys[i];
+ 	 	if(scores[k].issue == null){	
+ 	 	}
+ 	 	else{
+ 	 		issueNum ++;
+ 	 	}	
+ 	 	}
+ 	 	issue.innerHTML = ( "Num of issue finished: <br>" + issueNum + " / "+devices);
+ 	 	
+ 	 	
+ 	 	
+ 	 	for (var i = 0; i < keys.length; i++){
+ 	 	var k = keys[i];
+ 	 	if(scores[k].img == null){	
+ 	 	}
+ 	 	else{
+ 	 		imgNum ++;
+ 	 	}	
+ 	 	}
+ 	 	img.innerHTML = ("Num of poster finished: <br>" + imgNum + " / "+devices);
+ 	 	
+ 	 	var posterimgNum = 0;
+ 	 	 for (var i = 0; i < keys.length; i++){
+ 	 	var k = keys[i];
+ 	 	if(scores[k].posterimg == null){	
+ 	 	}
+ 	 	else{
+ 	 		posterimgNum ++;
+ 	 	}	
+ 	 	}
+ 	 	posterimg.innerHTML = ( "Num of poster finished: <br>" + posterimgNum + " / "+devices);
+ 	 	
+ 	 	}
+ 	 	
+ 	 	
+ 	 	
+function errData(data){
+	 alert("ERROR!" );
+}
+}
+window.onload = setup();
+	
+	ref.on("value", function(snapshot) {
+   console.log(snapshot.val());
+   		if(snapshot.val()  ==  2  ) {
+   			cur = "Write down your issue";
+   			
+   		}
+   		if(snapshot.val()  ==  3  ) {
+   			cur = "Choose one issue part";
+   		}
+   		if(snapshot.val()  ==  5  ) {
+   			cur = "Discuss and pick slogan";
+   		}
+   		if(snapshot.val()  ==  6  ) {
+   			cur = "Poster drawing part";
+   		}
+   			if(snapshot.val()  ==  7  ) {
+   			cur = "Place your poster into background";
+   		}
+        page.innerHTML = ("Now you are on: <br>" +  cur);
+	}, function (error) {
+   console.log("Error: " + error.code);
+	});
+	
+	
+	
+    //  var current = firebase.database().ref().child('startStatus').push();
+ 
+
+    
+ 
   
     </script>
     <script type="text/javascript">
