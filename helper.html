@@ -146,11 +146,14 @@ function gotData(data){
 function errData(data){
 	 alert("ERROR!" );
 }
+
+
 }
 window.onload = setup();
 	
 	ref.on("value", function(snapshot) {
    console.log(snapshot.val());
+   alert(snapshot.val());
    		if(snapshot.val()  ==  2  ) {
    			cur = "Write down your issue";
    			
@@ -164,8 +167,11 @@ window.onload = setup();
    		if(snapshot.val()  ==  6  ) {
    			cur = "Poster drawing part";
    		}
-   			if(snapshot.val()  ==  7  ) {
+   		if(snapshot.val()  ==  7  ) {
    			cur = "Place your poster into background";
+   		}
+   		else{
+   		cur = "Waiting Screen";
    		}
         page.innerHTML = ("Now you are on: <br>" +  cur);
 	}, function (error) {
