@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Paradigm</title>
+    <link href="https://fonts.googleapis.com/css?family=Syncopate:400,700" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgfavicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+<!-- 
+<marquee class="rolling-text-container" id= "text">
+ 
+</marquee>
+ -->
+<div class="container">
+<a href="gallery.html" class="button" style="position: fixed;right:20px;bottom: 10px;z-index: 1000000">NEXT</a>  
+<div class="marquee" id = "poster"></div>
+</div>
+<marquee class="rolling-text-container" id="test" scrollamount="10">
+</marquee>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBQdoWaXa7sQR4ygDgRIWKgPvro8lGr0Jg",
+    authDomain: "paradigm-a42bc.firebaseapp.com",
+    databaseURL: "https://paradigm-a42bc.firebaseio.com",
+    projectId: "paradigm-a42bc",
+    storageBucket: "paradigm-a42bc.appspot.com",
+    messagingSenderId: "745403935875"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+// 	var database = firebase.database();
+// function start() { 
+// alert("!!!!!");
+//  
+//  	firebase.database().ref().child('page12').set(1);
+// }
+
+ function setup() { 
+var database = firebase.database();
+//firebase.database().ref().child('startStatus').set(4);
+var ref = database.ref('devices');
+ref.on('value', gotData,errData);
+
+function gotData(data){
+	 var scores = data.val();
+	 var keys = Object.keys(scores);
+
+ 	 var poster = document.getElementById('poster');
+ 	  var test = document.getElementById('test');
+
+		
+	 for (var i = 0; i < keys.length; i++){
+ 	 	var k = keys[i];
+ 	 	if(scores[k].img != null) {
+		test.innerHTML += ("<div> <img src='"+scores[k].img+"'></div>");
+		}
+  	   
+  	       }
+  	      
+
+
+	//  for (var j = 0; j < keys.length; j++){
+//  	 	var index = keys[j];
+//  	 	var words = scores[index].issue;
+//  	 	if(scores[index].issue == null) {
+//  	 	alert("null");
+//  	 	words = "";
+//  	 	}
+//  	 	test.innerHTML +=(" / "+words);
+//  	 	}
+
+	 
+}
+function errData(data){
+	 alert("ERROR!" );
+}
+
+}
+
+	window.onload = setup();
+
+ </script>
+<script type="text/javascript">
+  $(window).load(function() {
+    $(".loader").fadeOut("slow");
+  });
+</script>
+
+
+</body>
+</html>
