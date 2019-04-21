@@ -17,17 +17,20 @@
 <div class="loader"></div>
 <div class="slider-wrapper">
   <div class="slider" id = "content">
-    <div class="slider--item" id = "0"> </div>
-	<div   class="slider--item" id = "1">
+    <div class="slider--item" id = "0" onclick="change(this.id)"> 
     </div>
-     <div  class="slider--item" id = "2">
+	<div   class="slider--item" id = "1" onclick="change(this.id)">
     </div>
-     <div  class="slider--item" id = "3">
+     <div  class="slider--item" id = "2" onclick="change(this.id)">
     </div>
-     <div  class="slider--item" id = "4">
+     <div  class="slider--item" id = "3" onclick="change(this.id)">
     </div>
-     <div  class="slider--item" id = "5">
+     <div  class="slider--item" id = "4" onclick="change(this.id)">
+  <!-- 
+  </div>
+     <div  class="slider~~item" id = "5">
     </div>
+ -->
     <!-- 
  <div  class="slider~~item" id = "6">
     </div>
@@ -74,22 +77,23 @@
   firebase.initializeApp(config);
 </script>
 <script>
-
+var scores;
+var keys;
  function setup() { 
 var database = firebase.database();
 firebase.database().ref().child('page21').set(1);
 var ref = database.ref('devices');
 ref.on('value', gotData,errData);
 function gotData(data){
-	 var scores = data.val();
-	 var keys = Object.keys(scores);
+	 scores = data.val();
+	 keys = Object.keys(scores);
 	 var num = keys.length;
  	 var content = document.getElementById('0');
  	 var content1 = document.getElementById('1');
  	 var content2 = document.getElementById('2');
  	 var content3 = document.getElementById('3');
 	var content4 = document.getElementById('4');
-	var content5 = document.getElementById('5');
+//	var content5 = document.getElementById('5');
 // 	var content6 = document.getElementById('6');
 // 	var content7 = document.getElementById('7');
 // 	var content8 = document.getElementById('8');
@@ -100,13 +104,15 @@ function gotData(data){
 // 	var content13 = document.getElementById('13');
 // 	var content14 = document.getElementById('14');
 // 	var content15 = document.getElementById('15');
+
      for (var i = 0; i < 15; i++){
 	 	var k = keys[i];
 		if(scores[k].posterimg == null) {
 		 alert("Warning: There is player who did not submit");
 		}
  	  if(i==0&& i<num){
- 	 	content.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	content.innerHTML += ('<img  id="img0" src="'+scores[k].img+'">');
+ 	 	img1 = scores[k].posterimg;
  	 	}
  	 	if(i==0&& i>=num){
  	  	content.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
@@ -135,12 +141,12 @@ function gotData(data){
  	 	if(i==4&& i>=num){
  	  	content4.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- 		 if(i==5&& i<num){
- 		 content5.innerHTML += ('<img src="'+scores[k].posterimg+'">');
- 	 	}
- 	   	if(i==5&& i>=num){
- 	  	content5.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
- 	 	}
+ // 		 if(i==5&& i<num){
+//  		 content5.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+//  	 	}
+//  	   	if(i==5&& i>=num){
+//  	  	content5.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+//  	 	}
  	
 //  		 if(i==6&& i<num){
 //  	 	content6.innerHTML += ('<img src="'+scores[k].posterimg+'">');
@@ -208,17 +214,59 @@ function gotData(data){
 
  	 
     }
- 	
  	 
 function errData(data){
 	 alert("ERROR!" );
 }
+
 
 }
 
 	window.onload = setup();
  	 
  	 </script>
+ 	 <script>
+
+ 	 var img0 = 0;
+ 	 var img1 = 0;
+ 	 var img2 = 0;
+ 	 var img3 = 0;
+ function change(clickid){
+   if(clickid == "0"){
+   if(img0 %2 == 0){
+   	document.getElementById("img0").src=scores[keys[0]].posterimg;
+   	}else{
+   	 document.getElementById("img0").src=scores[keys[0]].img;
+   	}
+   	img0++;
+  }
+   if(clickid == "1"){
+   if(img1 %2 == 0){
+   	document.getElementById("img1").src=scores[keys[1]].posterimg;
+   	}else{
+   	 document.getElementById("img1").src=scores[keys[1]].img;
+   	}
+   	img1++;
+  }
+  if(clickid == "2"){
+   if(img2 %2 == 0){
+   	document.getElementById("img2").src=scores[keys[2]].posterimg;
+   	}else{
+   	 document.getElementById("img2").src=scores[keys[2]].img;
+   	}
+   	img2++;
+  }
+  if(clickid == "3"){
+   if(img3 %2 == 0){
+   	document.getElementById("img3").src=scores[keys[3]].posterimg;
+   	}else{
+   	 document.getElementById("img3").src=scores[keys[3]].img;
+   	}
+   	img3++;
+  }
+  }
+ 	 </script>
+ 	 
      <script type="text/javascript">
       $(window).load(function() {
         $(".loader").fadeOut("slow");
