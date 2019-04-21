@@ -27,6 +27,9 @@
     <div><div>Everything</div></div>
  -->
   </div>
+  
+  
+  
 </div>
 
   
@@ -65,9 +68,10 @@ function gotData(data){
  	 var poster = document.getElementById('flip');
 	 for (var i = 0; i < keys.length; i++){
  	 	var k = keys[i];
- 	 	if(scores[k].issue.length < 12) {
- 	 	poster.innerHTML += ('<div><div id = "haha">'+scores[k].issue+'</div></div>');
- 	 	}
+ 	 	var str = scores[k].issue+"";
+ 	 	var words = str.split(" ");
+ 	 	poster.innerHTML += ('<div><div id = "haha">'+words[0]+'</div></div>');
+ 	 	
  	 	}
  	 	}
 function errData(data){
