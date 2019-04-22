@@ -28,6 +28,8 @@
     background-image: url('../img/banksy_3.jpg');
      /*  outline: 5px dotted black; */
       outline: #061C2E solid 7px;
+      padding-left :10px;
+      padding-top :10px;
 
 }
 #test{
@@ -42,6 +44,9 @@ body{
     cursor: url(../img/cursor.png), auto;
     text-transform: uppercase;
 
+}
+h2{
+	font-weight:bold;
 }
 
 a{
