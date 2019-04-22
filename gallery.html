@@ -118,25 +118,25 @@ function gotData(data){
  	  	content.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  	   if(i==1&& i<num){
- 	 	content1.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	content1.innerHTML += ('<img id="img1" src="'+scores[k].img+'">');
  	 	}
  	 	if(i==1&& i>=num){
  	  	content1.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  	 if(i==2&& i<num){
- 	 content2.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 content2.innerHTML += ('<img  id="img2" src="'+scores[k].img+'">');
  	 }
  	 	if(i==2&& i>=num){
  	  	content2.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  		 if(i==3&& i<num){
- 		 content3.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 		 content3.innerHTML += ('<img id="img3" src="'+scores[k].img+'">');
  		 }
  	 	if(i==3&& i>=num){
  	  	content3.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  		 if(i==4&& i<num){
- 		 content4.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 		 content4.innerHTML += ('<img src="'+scores[k].img+'">');
  		 }
  	 	if(i==4&& i>=num){
  	  	content4.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
@@ -227,42 +227,42 @@ function errData(data){
  	 </script>
  	 <script>
 
- 	 var img0 = 0;
- 	 var img1 = 0;
- 	 var img2 = 0;
- 	 var img3 = 0;
+ 	 var imgnum0 = 0;
+ 	 var imgnum1 = 0;
+ 	 var imgnum2 = 0;
+ 	 var imgnum3 = 0;
  function change(clickid){
    if(clickid == "0"){
-   if(img0 %2 == 0){
+   if(imgnum0 %2 == 0){
    	document.getElementById("img0").src=scores[keys[0]].posterimg;
    	}else{
    	 document.getElementById("img0").src=scores[keys[0]].img;
    	}
-   	img0++;
+   	imgnum0++;
   }
    if(clickid == "1"){
-   if(img1 %2 == 0){
-   	document.getElementById("img1").src=scores[keys[1]].posterimg;
+   if(imgnum1 % 2 == 0){
+   	document.getElementById("img1").src= scores[keys[1]].posterimg;
    	}else{
-   	 document.getElementById("img1").src=scores[keys[1]].img;
+   	 document.getElementById("img1").src= scores[keys[1]].img;
    	}
-   	img1++;
+   	imgnum1++;
   }
   if(clickid == "2"){
-   if(img2 %2 == 0){
+   if(	imgnum2 %2 == 0){
    	document.getElementById("img2").src=scores[keys[2]].posterimg;
    	}else{
    	 document.getElementById("img2").src=scores[keys[2]].img;
    	}
-   	img2++;
+   		imgnum2++;
   }
   if(clickid == "3"){
-   if(img3 %2 == 0){
+   if(	imgnum3 %2 == 0){
    	document.getElementById("img3").src=scores[keys[3]].posterimg;
    	}else{
    	 document.getElementById("img3").src=scores[keys[3]].img;
    	}
-   	img3++;
+   		imgnum3++;
   }
   }
  	 </script>
