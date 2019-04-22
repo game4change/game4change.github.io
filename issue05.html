@@ -11,6 +11,8 @@
 		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 	</head>
+		  <embed src="music/cursor.mp3" width="180" height="90" loop="false" autostart="true" hidden="true" />
+
 	<body style ="background-color:#faf9f9; background-image: url(img/banksy_6.jpg);background-size: cover;" onload ="start()">
 		<div class="loader"></div>
 <!-- 		<div class="back-img"><img src="img/illustration/16.png"></div>
@@ -67,12 +69,11 @@
 				}
 								}
 		function start(){
+			
 			var h4 = document.getElementsByTagName('h4')[0];
 			h4.style.display= 'none';
 			var database = firebase.database();
 			firebase.database().ref().child('startStatus').set(7);
-
-			
 			
 		}
 			function timer(){
@@ -98,6 +99,7 @@
 		<script type="text/javascript">
       $(window).load(function() {
         $(".loader").fadeOut("slow");
+        
       });
     </script>
 	</body>
