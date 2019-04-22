@@ -18,6 +18,23 @@
 
 }
 
+#footer{
+    position: fixed;
+    top: 10px;
+    width:29%;
+    height:100%;
+    word-wrap: break-word;
+    margin: auto;/*left:auto; right:auto;*/
+    background-image: url('../img/banksy_3.jpg');
+     /*  outline: 5px dotted black; */
+      outline: #061C2E solid 7px;
+
+}
+#test{
+   margin-left:29%;
+
+}
+
 body{
       transition: all 0.3s ease-in;
     color: #061C2E;
@@ -608,6 +625,7 @@ h4{
 .container {
   width:100%;
   overflow:hidden;
+  margin-left: 30%;
 }
 .marquee{
 display:block;

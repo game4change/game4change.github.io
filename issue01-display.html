@@ -16,12 +16,16 @@
  
 </marquee>
  -->
+ <div id="footer"> <h1> Issues:</h1> </div>
+
 <div class="container">
 <a href="issue03.html" class="button" style="position: fixed;right:20px;bottom: 10px;z-index: 1000000">NEXT</a>  
 <div class="marquee" id = "poster"></div>
 </div>
+
 <marquee class="rolling-text-container" id="test" scrollamount="10">
 </marquee>
+
 
 
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
@@ -59,6 +63,7 @@ function gotData(data){
 
  	 var poster = document.getElementById('poster');
  	  var test = document.getElementById('test');
+ 	    var footer = document.getElementById('footer');
 
 		var ariel = "a";
 		var zoe = "z" ; 
@@ -77,7 +82,8 @@ function gotData(data){
 //  		}
  		
  	 	if(scores[k].issue != null && scores[k].issue.length <= 4 ) {
- 	 	test.innerHTML +=(" / "+scores[k].issue);
+ 	 	footer.innerHTML += ("<h2>"+scores[k].issue+"</h2>");
+ 	 	//test.innerHTML +=(" / "+scores[k].issue);
  	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
  	    var tall = document.getElementById(ariel);
  	 	tall.innerHTML += ( '<div class="issue-poster-front style-04-front">'+scores[k].issue+'</div>'); 
@@ -85,7 +91,8 @@ function gotData(data){
  		}
  		
  		if( scores[k].issue != null && scores[k].issue.length > 4 && scores[k].issue.length < 7) {
- 		test.innerHTML +=(" / "+scores[k].issue);
+ 		//test.innerHTML +=(" / "+scores[k].issue);
+ 		footer.innerHTML += ("<h2>"+scores[k].issue+"</h2>");
      	poster.innerHTML += ('<div class="issue-poster-back style-0811-back" id='+ zoe +'></div>');
      	var grande = document.getElementById(zoe);
      	grande.innerHTML += ('<div class="issue-poster-front style-0811-front">'+scores[k].issue+'&nbsp;'+'<b style="color: #faf9f9">'+scores[k].issue+'&nbsp;'+'</b>'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;');
@@ -93,7 +100,8 @@ function gotData(data){
  		}
  		
  		if(scores[k].issue != null && scores[k].issue.length >= 7 && scores[k].issue.length <= 11) {
- 		test.innerHTML +=(" / "+scores[k].issue);
+ 		//test.innerHTML +=(" / "+scores[k].issue);
+ 		 footer.innerHTML += ("<h2>"+scores[k].issue+"</h2>");
   		 poster.innerHTML += ('  <div class="issue-poster-back style-0507-back" id='+boyi +'></div>');
   		 var venti = document.getElementById(boyi);
   	     venti.innerHTML += ('<div class="issue-poster-front style-0507-front">' +scores[k].issue +scores[k].issue+scores[k].issue+scores[k].issue+'<b style="color: #FF85C1">'+scores[k].issue+'</b>' +scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+'</div>');
@@ -101,7 +109,8 @@ function gotData(data){
   	      }
   	      
   	     if(scores[k].issue != null && scores[k].issue.length > 11 && scores[k].issue.length < 17) {
-  	     test.innerHTML +=(" / "+scores[k].issue);
+  	      footer.innerHTML += ("<h2>"+scores[k].issue+"</h2>");
+  	   //  test.innerHTML +=(" / "+scores[k].issue);
   	     poster.innerHTML += ('<div class="issue-poster-back style-1217-back" id= '+tera +'></div>');
   	     var tranta = document.getElementById(tera);
   	     var q;
@@ -119,8 +128,8 @@ function gotData(data){
 
   	      
   	      if(scores[k].issue != null && scores[k].issue.length >= 17) {
-  	       		test.innerHTML +=(" / "+scores[k].issue);
-
+  	       	 	footer.innerHTML += ("<h2>"+scores[k].issue+"</h2>");
+  	       		//test.innerHTML +=(" / "+scores[k].issue);
   	       poster.innerHTML += ('  <div class="issue-poster-back style-1828-back" id='+ sau +'></div>');
   	       var party = document.getElementById(sau);
     	 	party.innerHTML += ('<div class="issue-poster-front style-1828-front">'+scores[k].issue+'</div>'); 
