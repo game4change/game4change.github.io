@@ -11,7 +11,14 @@
 		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 	</head>
-		  <embed src="music/cursor.mp3" width="180" height="90" loop="false" autostart="true" hidden="true" />
+	 <audio
+        autostart = "true";
+        volume="20"
+       src="music/cursor.mp3">         
+    </audio>
+<!-- 
+		  <embed src="music/cursor.mp3" width="180" height="90" volume="20" loop="false" autostart="true" hidden="true" />
+ -->
 
 	<body style ="background-color:#faf9f9; background-image: url(img/banksy_7.jpg);background-size: cover;" onload ="start()">
 		<div class="loader"></div>
@@ -43,6 +50,7 @@
 		<script>
 		var num = 0;
 		var audio = new Audio('music/poster.mp3');
+		audio.volume = 0.4;
 		var h4 = document.getElementsByTagName('h4')[0];
 		var poster = document.getElementById('datetime');
 		//var qaq = document.getElementById('qaq');
