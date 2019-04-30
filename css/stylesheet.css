@@ -5,6 +5,7 @@
   src: url(knowyour.ttf);
 }
 
+/* 
 #footer{
     position: fixed;
     top: 10px;
@@ -19,6 +20,7 @@
       padding-top :10px;
 
 }
+ */
 #test{
    margin-left:29%;
 
@@ -659,7 +661,7 @@ opacity: 0.75;
   margin:20px;
   margin-bottom: 20px;
   display: inline-block;
-  zoom:1.05;
+  zoom:1.55;
   margin-right: 40px;
 }
 

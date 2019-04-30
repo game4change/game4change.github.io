@@ -11,21 +11,15 @@
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body style ="background-color:#faf9f9; background-image: url(img/wall1.jpg);background-size: cover;" >
-<!-- 
-<marquee class="rolling-text-container" id= "text">
- 
-</marquee>
- -->
- <div id="footer"> <h1> Issues</h1><br></div>
 
-<div class="container">
+
+
 <a href="issue03.html" class="button" style="position: fixed;right:20px;bottom: 10px;z-index: 1000000">NEXT</a>  
-<div class="marquee" id = "poster"></div>
+
+<!-- ZOE -->
+<div class="poster-container" id ="poster">
+
 </div>
-
-<!-- <marquee class="rolling-text-container" id="test" scrollamount="10">
- --></marquee>
-
 
 
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
@@ -44,12 +38,7 @@
   firebase.initializeApp(config);
 </script>
 <script>
-// 	var database = firebase.database();
-// function start() { 
-// alert("!!!!!");
-//  
-//  	firebase.database().ref().child('page12').set(1);
-// }
+
 
  function setup() { 
 var database = firebase.database();
@@ -63,97 +52,97 @@ function gotData(data){
 	 var index = 0;
 
  	 var poster = document.getElementById('poster');
- 	  var test = document.getElementById('test');
- 	    var footer = document.getElementById('footer');
+ 	 
+ 	 poster.innerHTML +=  ('<div class="issue-title"> What are <br>the issues <br>in your <br>mind?<br><br><br></div>');
 
-		var ariel = "a";
-		var zoe = "z" ; 
-		var boyi = "b";
-		var tera = "t";
-		var sau = "s";
+		var random45 = 1;
+		var random67 = 1;
+		var random89 = 1;
+	
 	 for (var i = 0; i < keys.length; i++){
  	 	var k = keys[i];
  	 	index++;
- 	 // 	if(scores[k].issue == null) {
-//  	 	alert("null");
-//  	  	test.innerHTML +=(" / NULL");
-//  	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
-//  	    var tall = document.getElementById(ariel);
-//  	 	tall.innerHTML += ( '<div class="issue-poster-front style-04-front"></div>'); 
-//  	 	ariel+="a";
-//  		}
- 		
- 	 	if(scores[k].issue != null && scores[k].issue.length <= 4 ) {
- 	 	footer.innerHTML += ("<h2>"+scores[k].issue+"</h2><br>");
- 	 	//test.innerHTML +=(" / "+scores[k].issue);
- 	 	poster.innerHTML += ('<div class="issue-poster-back style-04-back" id='+ariel+'></div>');
- 	    var tall = document.getElementById(ariel);
- 	 	tall.innerHTML += ( '<div class="issue-poster-front style-04-front">'+scores[k].issue+'</div>'); 
- 	 	ariel+="a";
+
+ 	 	if(scores[k].issue != null && scores[k].issue.length < 4 ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0103-back">  <div class="issue-poster-front style-0103-front">'+scores[k].issue + ' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		}
  		
- 		if( scores[k].issue != null && scores[k].issue.length > 4 && scores[k].issue.length < 7) {
- 		//test.innerHTML +=(" / "+scores[k].issue);
- 		footer.innerHTML += ("<h2>"+scores[k].issue+"</h2><br>");
-     	poster.innerHTML += ('<div class="issue-poster-back style-0811-back" id='+ zoe +'></div>');
-     	var grande = document.getElementById(zoe);
-     	grande.innerHTML += ('<div class="issue-poster-front style-0811-front">'+scores[k].issue+'&nbsp;'+'<b style="color: #faf9f9">'+scores[k].issue+'&nbsp;'+'</b>'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;'+scores[k].issue+'&nbsp;');
-  		zoe+="z";
+ 		else if(scores[k].issue != null && scores[k].issue.length < 6 && (random45 % 2 == 1) ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0405-back">  <div class="issue-poster-front style-0405-front">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
+ 		random45++;
  		}
  		
- 		if(scores[k].issue != null && scores[k].issue.length >= 7 && scores[k].issue.length <= 11) {
- 		//test.innerHTML +=(" / "+scores[k].issue);
- 		 footer.innerHTML += ("<h2>"+scores[k].issue+"</h2><br>");
-  		 poster.innerHTML += ('  <div class="issue-poster-back style-0507-back" id='+boyi +'></div>');
-  		 var venti = document.getElementById(boyi);
-  	     venti.innerHTML += ('<div class="issue-poster-front style-0507-front">' +scores[k].issue +scores[k].issue+scores[k].issue+scores[k].issue+'<b style="color: #FF85C1">'+scores[k].issue+'</b>' +scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+scores[k].issue+'</div>');
-  	     boyi+="b"
-  	      }
-  	      
-  	     if(scores[k].issue != null && scores[k].issue.length > 11 && scores[k].issue.length < 17) {
-  	      footer.innerHTML += ("<h2>"+scores[k].issue+"</h2><br>");
-  	   //  test.innerHTML +=(" / "+scores[k].issue);
-  	     poster.innerHTML += ('<div class="issue-poster-back style-1217-back" id= '+tera +'></div>');
-  	     var tranta = document.getElementById(tera);
-  	     var q;
-  	     var j;
-  	     for(q = 0; q< 3600; q ++){
-  	        if(q%20 == 0 && q != 0){
-  	           tranta.innerHTML += ('<br>');
-  		  }
-  	     	 tranta.innerHTML += scores[k].issue;
-  		 }
-  		 
-  	     tranta.innerHTML += ('<div class="issue-poster-front style-1217-front">'+scores[k].issue+'</div>');
-  	     tera+="t";
-  	      }
+ 		else if(scores[k].issue != null && scores[k].issue.length < 6 && (random45 % 2 == 0) ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0405-back-2">  <div class="issue-poster-front style-0405-front-2">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
+ 		random45++;
+ 		}
+ 		
+ 		else if(scores[k].issue != null && scores[k].issue.length < 8 && (random67 % 2 == 1) ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0607-back">  <div class="issue-poster-front style-0607-front"><br>'+scores[k].issue+'<br><b style="color: #D5FF3E">'+scores[k].issue+'</b><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
+ 		random67++;
+ 		}
+ 		
+ 		else if(scores[k].issue != null && scores[k].issue.length < 8 && (random67 % 2 == 0) ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-0607-back-2"> <div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b>'+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
+ 		random67++;
+ 		}
+ 		
+ 		else if(scores[k].issue != null && scores[k].issue.length < 10 && (random89 % 2 == 0) ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-0809-back-2"><div class="issue-poster-front style-0809-front-2"><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
+ 		random89++;
+ 		}
+ 		else if(scores[k].issue != null && scores[k].issue.length < 10 && (random89 % 2 == 1) ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-0809-back"><div class="issue-poster-front style-0809-front"><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
+ 		random89++;
+ 		}
+ 		else if(scores[k].issue != null && scores[k].issue.length < 12 ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-12-back"><div class="issue-poster-front style-12-front"><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
+ 	
+ 		}
+ 		else if(scores[k].issue != null && scores[k].issue.length >= 12 ) {
+ 	 	poster.innerHTML += ('  <div class="poster-item"><div class="issue-poster-back style-1011-back"><div class="issue-poster-front style-1011-front">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+ '<b style="color: #D5FF3E">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br></b>'+'</div></div><div class="issue-name">'+scores[k].issue+'</div> </div>');
 
-  	      
-  	      if(scores[k].issue != null && scores[k].issue.length >= 17) {
-  	       	 	footer.innerHTML += ("<h2>"+scores[k].issue+"</h2><br>");
-  	       		//test.innerHTML +=(" / "+scores[k].issue);
-  	       poster.innerHTML += ('  <div class="issue-poster-back style-1828-back" id='+ sau +'></div>');
-  	       var party = document.getElementById(sau);
-    	 	party.innerHTML += ('<div class="issue-poster-front style-1828-front">'+scores[k].issue+'</div>'); 
-  	        sau+="s";
-  	     	  }
-  	       }
-  	      
+ 		}
+ 		
+ 		
+ 		
+ 		
+//  		<!-- 
+// 
+//   <!~~ if the longest single word length is 10,11~~>
+//   <div class="poster-item">
+//     <div class="issue-poster-back style-1011-back">
+//       <div class="issue-poster-front style-1011-front">gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>
+//         <b style="color: #D5FF3E">gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA </b>
+//       </div>
+//     </div>
+//     <div class="issue-name">
+//       10-11 character
+//     </div>
+//   </div>
+// 
+//   <!~~ if the longest single word length is 12,13,14,15....~~>
+//   <div class="poster-item">
+//     <div class="issue-poster-back style-12-back">
+//       <div class="issue-poster-front style-12-front"><br><br>crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto
+//       </div>
+//     </div>
+//     <div class="issue-name">
+//       12+ character
+//     </div>
+//   </div>
+//  -->
+
+ 		
 
 
-	//  for (var j = 0; j < keys.length; j++){
-//  	 	var index = keys[j];
-//  	 	var words = scores[index].issue;
-//  	 	if(scores[index].issue == null) {
-//  	 	alert("null");
-//  	 	words = "";
-//  	 	}
-//  	 	test.innerHTML +=(" / "+words);
-//  	 	}
+ 		
+
 
 	 
 }
 
+}
 
 function errData(data){
 	 alert("ERROR!" );
@@ -171,135 +160,6 @@ function errData(data){
 </script>
 
 
-<!-- ZOE -->
-<div class="poster-container">
-
-  <div class="issue-title">
-    What are <br>the issues <br>in your <br>mind?  
-  </div>
-
-  <!-- if the longest single word length is 1,2,3 -->
-  <div class="poster-item">
-    <div class="issue-poster-back style-0103-back">
-      <div class="issue-poster-front style-0103-front">let it be the bit
-      </div>
-    </div>
-    <div class="issue-name">
-      1-3 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 4,5 (random 1)-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-0405-back">
-      <div class="issue-poster-front style-0405-front">porns are life<br>porns are life<br>porns are life<br> porns are life<br>porns are life<br>porns are life<br>porns are life<br>porns are life<br>porns are life<br>porns are life
-      </div>
-    </div>
-    <div class="issue-name">
-      4-5 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 4,5 (random 2)-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-0405-back-2">
-      <div class="issue-poster-front style-0405-front-2">porns are life<br>porns are life<br>porns are life<br> porns are life<br>porns are life
-      </div>
-    </div>
-    <div class="issue-name">
-      4-5 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 6,7 (random 1)-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-0607-back">
-      <div class="issue-poster-front style-0607-front"><br>poor childre
-        <b style="color: #D5FF3E">poor childre</b> poor childre poor childre poor childre poor childre poor childre poor childre poor childre poor childre poor childre poor childre poor childre poor childre poor childre
-      </div>
-    </div>
-    <div class="issue-name">
-      6-7 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 6,7 (random 2)-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-0607-back-2">
-      <div class="issue-poster-front style-0607-front-2"><br>poor childre
-        <b style="color: #061C2E">poor childre</b>
-      </div>
-      <div class="issue-poster-front style-0607-front-2"><br>poor childre
-        <b style="color: #061C2E">poor childre</b>
-      </div>
-      <div class="issue-poster-front style-0607-front-2"><br>poor childre
-        <b style="color: #061C2E">poor childre</b>
-      </div>
-      <div class="issue-poster-front style-0607-front-2"><br>poor childre
-        <b style="color: #061C2E">poor childre</b>
-      </div>
-      <div class="issue-poster-front style-0607-front-2"><br>poor childre
-        <b style="color: #061C2E">poor childre</b>
-      </div>
-      <div class="issue-poster-front style-0607-front-2"><br>poor childre
-        <b style="color: #061C2E">poor childre</b>
-      </div>
-    </div>
-    <div class="issue-name">
-      6-7 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 8,9 (random 1)-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-0809-back">
-      <div class="issue-poster-front style-0809-front"><br>
-        cryptoo cryptooo<br> cryptoo cryptooo<br/>cryptoo cryptooo<br/>cryptoo cryptooo<br/>cryptoo cryptooo<br/>
-        cryptoo cryptooo<br/>cryptoo cryptooo<br/>cryptoo cryptooo<br/>
-      </div>
-    </div>
-    <div class="issue-name">
-      8-9 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 8,9 (random 2)-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-0809-back-2">
-      <div class="issue-poster-front style-0809-front-2">
-        cryptoo cryptooo<br> cryptoo cryptooo<br/>cryptoo cryptooo<br/>cryptoo cryptooo<br/>cryptoo cryptooo<br/>
-        cryptoo cryptooo<br/>cryptoo cryptooo<br/>cryptoo cryptooo<br/>
-      </div>
-    </div>
-    <div class="issue-name">
-      8-9 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 10,11-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-1011-back">
-      <div class="issue-poster-front style-1011-front">gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>
-        <b style="color: #D5FF3E">gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA <br>gender inequality in AAA </b>
-      </div>
-    </div>
-    <div class="issue-name">
-      10-11 character
-    </div>
-  </div>
-
-  <!-- if the longest single word length is 12,13,14,15....-->
-  <div class="poster-item">
-    <div class="issue-poster-back style-12-back">
-      <div class="issue-poster-front style-12-front"><br><br>crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto crypto
-      </div>
-    </div>
-    <div class="issue-name">
-      12+ character
-    </div>
-  </div>
-
-</div>
 
 </body>
 </html>
