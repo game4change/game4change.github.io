@@ -26,34 +26,37 @@
      <div  class="slider--item" id = "3" onclick="change(this.id)">
     </div>
      <div  class="slider--item" id = "4" onclick="change(this.id)">
-  <!-- 
-  </div>
-     <div  class="slider~~item" id = "5">
+      </div>
+	<div   class="slider--item" id = "5" onclick="change(this.id)">
     </div>
- -->
-    <!-- 
- <div  class="slider~~item" id = "6">
+     <div  class="slider--item" id = "6" onclick="change(this.id)">
     </div>
- -->
-<!-- 
-     <div  class="slider~~item" id = "7">
+     <div  class="slider--item" id = "7" onclick="change(this.id)">
     </div>
-     <div  class="slider~~item" id = "8">
+     <div  class="slider--item" id = "8" onclick="change(this.id)">
+      </div>
+     <div  class="slider--item" id = "9" onclick="change(this.id)">
     </div>
-     <div  class="slider~~item" id = "9">
+     <div  class="slider--item" id = "10" onclick="change(this.id)">
     </div>
-     <div  class="slider~~item" id = "10">
+	<div   class="slider--item" id = "11" onclick="change(this.id)">
     </div>
-     <div  class="slider~~item" id = "11">
+     <div  class="slider--item" id = "12" onclick="change(this.id)">
     </div>
-     <div  class="slider~~item" id = "12">
+     <div  class="slider--item" id = "13" onclick="change(this.id)">
     </div>
-     <div  class="slider~~item" id = "13">
+     <div  class="slider--item" id = "14" onclick="change(this.id)">
+      </div>
+	<div   class="slider--item" id = "15" onclick="change(this.id)">
     </div>
-    <div  class="slider~~item" id = "14">
+     <div  class="slider--item" id = "16" onclick="change(this.id)">
     </div>
-    <div  class="slider~~item" id = "15">
- -->
+     <div  class="slider--item" id = "17" onclick="change(this.id)">
+    </div>
+     <div  class="slider--item" id = "18" onclick="change(this.id)">
+      </div>
+     <div  class="slider--item" id = "19" onclick="change(this.id)">
+    </div>
     </div>
   </div>
 </div>
@@ -93,123 +96,150 @@ function gotData(data){
  	 var content2 = document.getElementById('2');
  	 var content3 = document.getElementById('3');
 	var content4 = document.getElementById('4');
-//	var content5 = document.getElementById('5');
-// 	var content6 = document.getElementById('6');
-// 	var content7 = document.getElementById('7');
-// 	var content8 = document.getElementById('8');
-// 	var content9 = document.getElementById('9');
-// 	var content10 = document.getElementById('10');
-// 	var content11 = document.getElementById('11');
-// 	var content12 = document.getElementById('12');
-// 	var content13 = document.getElementById('13');
-// 	var content14 = document.getElementById('14');
-// 	var content15 = document.getElementById('15');
+	var content5 = document.getElementById('5');
+	var content6 = document.getElementById('6');
+	var content7 = document.getElementById('7');
+	var content8 = document.getElementById('8');
+	var content9 = document.getElementById('9');
+	var content10 = document.getElementById('10');
+	var content11 = document.getElementById('11');
+	var content12 = document.getElementById('12');
+	var content13 = document.getElementById('13');
+	var content14 = document.getElementById('14');
+	var content15 = document.getElementById('15');
+	var content16 = document.getElementById('16');
+	var content17 = document.getElementById('17');
+	var content18 = document.getElementById('18');
+	var content19 = document.getElementById('19');
 
-     for (var i = 0; i < 15; i++){
+     for (var i = 0; i < 20; i++){
 	 	var k = keys[i];
-		if(scores[k].posterimg == null) {
-		 alert("Warning: There is player who did not submit");
-		}
- 	  if(i==0&& i<num){
+
+ 	    if(i==0&& i<num){
  	 	content.innerHTML += ('<img  id="img0" src="'+scores[k].img+'">');
  	 	img1 = scores[k].posterimg;
  	 	}
- 	 	if(i==0&& i>=num){
+ 	 	else if(i==0&& i>=num){
  	  	content.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- 	   if(i==1&& i<num){
+ 	    else if(i==1&& i<num){
  	 	content1.innerHTML += ('<img id="img1" src="'+scores[k].img+'">');
  	 	}
- 	 	if(i==1&& i>=num){
+ 	 	else if(i==1&& i>=num){
  	  	content1.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- 	 if(i==2&& i<num){
+ 		else if(i==2&& i<num){
  	 content2.innerHTML += ('<img  id="img2" src="'+scores[k].img+'">');
  	 }
- 	 	if(i==2&& i>=num){
+ 	 	else if(i==2&& i>=num){
  	  	content2.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- 		 if(i==3&& i<num){
+ 		 else if(i==3&& i<num){
  		 content3.innerHTML += ('<img id="img3" src="'+scores[k].img+'">');
  		 }
- 	 	if(i==3&& i>=num){
+ 	 	else if(i==3&& i>=num){
  	  	content3.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- 		 if(i==4&& i<num){
+ 		 else if(i==4&& i<num){
  		 content4.innerHTML += ('<img src="'+scores[k].img+'">');
  		 }
- 	 	if(i==4&& i>=num){
+ 	 	else if(i==4&& i>=num){
  	  	content4.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- // 		 if(i==5&& i<num){
-//  		 content5.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 	}
-//  	   	if(i==5&& i>=num){
-//  	  	content5.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
+ 		else if(i==5&& i<num){
+ 		 content5.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	   	else if(i==5&& i>=num){
+ 	  	content5.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
  	
-//  		 if(i==6&& i<num){
-//  	 	content6.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 	}
-//  	 	if(i==6&& i>=num){
-//  	  	content6.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-// 	if(i==7&& i<num){
-//  	 content7.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	 if(i==7&& i>=num){
-//  	  	content7.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	 if(i==8&& i<num){
-//  	 content8.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	 if(i==8&& i>=num){
-//  	  	content8.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	 if(i==9&& i<num){
-//  	 content9.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	 if(i==9&& i>=num){
-//  	  	content9.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	  if(i==10&& i<num){
-//  	 content10.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	 if(i==10&& i>=num){
-//  	  	content10.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	  if(i==11&& i<num){
-//  	 content11.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	 if(i==11&& i>=num){
-//  	  	content11.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	  if(i==12&& i<num){
-//  	 content12.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	  if(i==12&& i>=num){
-//  	  	content12.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	  if(i==13&& i<num){
-//  	 content13.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	   if(i==13&& i>=num){
-//  	  	content13.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	  if(i==14&& i<num){
-//  	 content14.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	  if(i==14&& i>=num){
-//  	  	content14.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	 if(i==15&& i<num){
-//  	 content15.innerHTML += ('<img src="'+scores[k].posterimg+'">');
-//  	 }
-//  	 if(i==15&& i>=num){
-//  	  	content15.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
-//  	 	}
-//  	 
-//  	 
+ 		else if(i==6&& i<num){
+ 	 	content6.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	 	else if(i==6&& i>=num){
+ 	  	content6.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 	 	 else if(i==7&& i<num){
+ 		 content7.innerHTML += ('<img id="img3" src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==7&& i>=num){
+ 	  	content7.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		 else if(i==8& i<num){
+ 		 content8.innerHTML += ('<img src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==8&& i>=num){
+ 	  	content8.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		else if(i==9&& i<num){
+ 		 content9.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	   	else if(i==9&& i>=num){
+ 	  	content9.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 	
+ 		else if(i==10&& i<num){
+ 	 	content10.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	 	else if(i==10&& i>=num){
+ 	  	content10.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 	 	 else if(i==11&& i<num){
+ 	 	content11.innerHTML += ('<img id="img1" src="'+scores[k].img+'">');
+ 	 	}
+ 	 	else if(i==11&& i>=num){
+ 	  	content11.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		else if(i==12&& i<num){
+ 		 content12.innerHTML += ('<img  id="img2" src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==12&& i>=num){
+ 	  	content12.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		 else if(i==13&& i<num){
+ 		 content13.innerHTML += ('<img id="img3" src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==13&& i>=num){
+ 	  	content13.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		 else if(i==14&& i<num){
+ 		 content14.innerHTML += ('<img src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==14&& i>=num){
+ 	  	content14.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		else if(i==15&& i<num){
+ 		 content15.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	   	else if(i==15&& i>=num){
+ 	  	content15.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 	
+ 		else if(i==16&& i<num){
+ 	 	content16.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	 	else if(i==16&& i>=num){
+ 	  	content16.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 	 	 else if(i==17&& i<num){
+ 		 content17.innerHTML += ('<img id="img3" src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==17&& i>=num){
+ 	  	content17.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		 else if(i==18& i<num){
+ 		 content18.innerHTML += ('<img src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==18&& i>=num){
+ 	  	content18.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+ 		else if(i==19&& i<num){
+ 		 content19.innerHTML += ('<img src="'+scores[k].posterimg+'">');
+ 	 	}
+ 	   	else if(i==19&& i>=num){
+ 	  	content19.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
+ 	 	}
+	 
  	 }
 
  	 
@@ -231,6 +261,23 @@ function errData(data){
  	 var imgnum1 = 0;
  	 var imgnum2 = 0;
  	 var imgnum3 = 0;
+ 	 var imgnum4 = 0;
+ 	 var imgnum5 = 0;
+ 	 var imgnum6 = 0;
+ 	 var imgnum7 = 0;
+ 	 var imgnum8 = 0;
+ 	 var imgnum9 = 0;
+ 	 var imgnum10 = 0;
+ 	 var imgnum11 = 0;
+ 	 var imgnum12 = 0;
+ 	 var imgnum13 = 0;
+ 	 var imgnum14 = 0;
+ 	 var imgnum15 = 0;
+ 	 var imgnum16 = 0;
+ 	 var imgnum17 = 0;
+ 	 var imgnum18 = 0;
+ 	 var imgnum19 = 0;
+ 	 
  function change(clickid){
    if(clickid == "0"){
    if(imgnum0 %2 == 0){
@@ -256,6 +303,7 @@ function errData(data){
    	}
    		imgnum2++;
   }
+  
   if(clickid == "3"){
    if(	imgnum3 %2 == 0){
    	document.getElementById("img3").src=scores[keys[3]].posterimg;
@@ -264,6 +312,162 @@ function errData(data){
    	}
    		imgnum3++;
   }
+    
+  if(clickid == "3"){
+   if(	imgnum3 %2 == 0){
+   	document.getElementById("img3").src=scores[keys[3]].posterimg;
+   	}else{
+   	 document.getElementById("img3").src=scores[keys[3]].img;
+   	}
+   		imgnum3++;
+  }
+  
+    if(clickid == "4"){
+   if(	imgnum4 %2 == 0){
+   	document.getElementById("img4").src=scores[keys[4]].posterimg;
+   	}else{
+   	 document.getElementById("img4").src=scores[keys[4]].img;
+   	}
+   		imgnum4++;
+  }
+  
+  if(clickid == "5"){
+   if(	imgnum5 %2 == 0){
+   	document.getElementById("img5").src=scores[keys[5]].posterimg;
+   	}else{
+   	 document.getElementById("img5").src=scores[keys[5]].img;
+   	}
+   		imgnum5++;
+  }
+    
+  if(clickid == "6"){
+   if(	imgnum6 %2 == 0){
+   	document.getElementById("img6").src=scores[keys[6]].posterimg;
+   	}else{
+   	 document.getElementById("img6").src=scores[keys[6]].img;
+   	}
+   		imgnum6++;
+  }
+  
+   if(clickid == "7"){
+   if(	imgnum7 %2 == 0){
+   	document.getElementById("img7").src=scores[keys[7]].posterimg;
+   	}else{
+   	 document.getElementById("img7").src=scores[keys[7]].img;
+   	}
+   		imgnum7++;
+  }
+  
+    if(clickid == "8"){
+   if(	imgnum8 %2 == 0){
+   	document.getElementById("img8").src=scores[keys[8]].posterimg;
+   	}else{
+   	 document.getElementById("img8").src=scores[keys[8]].img;
+   	}
+   		imgnum8++;
+  }
+  
+    if(clickid == "9"){
+   if(	imgnum9 %2 == 0){
+   	document.getElementById("img9").src=scores[keys[9]].posterimg;
+   	}else{
+   	 document.getElementById("img9").src=scores[keys[9]].img;
+   	}
+   		imgnum9++;
+  }
+  
+    if(clickid == "10"){
+   if(	imgnum10 %2 == 0){
+   	document.getElementById("img10").src=scores[keys[10]].posterimg;
+   	}else{
+   	 document.getElementById("img10").src=scores[keys[10]].img;
+   	}
+   		imgnum10++;
+  }
+  
+    if(clickid == "11"){
+   if(	imgnum11 %2 == 0){
+   	document.getElementById("img11").src=scores[keys[11]].posterimg;
+   	}else{
+   	 document.getElementById("img11").src=scores[keys[11]].img;
+   	}
+   		imgnum11++;
+  }
+  
+    if(clickid == "12"){
+   if(	imgnum12 %2 == 0){
+   	document.getElementById("img12").src=scores[keys[12]].posterimg;
+   	}else{
+   	 document.getElementById("img12").src=scores[keys[12]].img;
+   	}
+   		imgnum12++;
+  }
+  
+    if(clickid == "13"){
+   if(	imgnum13 %2 == 0){
+   	document.getElementById("img13").src=scores[keys[13]].posterimg;
+   	}else{
+   	 document.getElementById("img13").src=scores[keys[13]].img;
+   	}
+   		imgnum13++;
+  }
+  
+    if(clickid == "14"){
+   if(	imgnum14 %2 == 0){
+   	document.getElementById("img14").src=scores[keys[14]].posterimg;
+   	}else{
+   	 document.getElementById("img14").src=scores[keys[14]].img;
+   	}
+   		imgnum14++;
+  }
+  
+    if(clickid == "15"){
+   if(	imgnum15 %2 == 0){
+   	document.getElementById("img15").src=scores[keys[15]].posterimg;
+   	}else{
+   	 document.getElementById("img15").src=scores[keys[15]].img;
+   	}
+   		imgnum15++;
+  }
+  
+    if(clickid == "16"){
+   if(	imgnum16 %2 == 0){
+   	document.getElementById("img16").src=scores[keys[16]].posterimg;
+   	}else{
+   	 document.getElementById("img16").src=scores[keys[16]].img;
+   	}
+   		imgnum16++;
+  }
+  
+    if(clickid == "17"){
+   if(	imgnum17 %2 == 0){
+   	document.getElementById("img17").src=scores[keys[17]].posterimg;
+   	}else{
+   	 document.getElementById("img17").src=scores[keys[17]].img;
+   	}
+   		imgnum17++;
+  }
+  
+    if(clickid == "18"){
+   if(	imgnum18 %2 == 0){
+   	document.getElementById("img18").src=scores[keys[18]].posterimg;
+   	}else{
+   	 document.getElementById("img18").src=scores[keys[18]].img;
+   	}
+   		imgnum18++;
+  }
+  
+    if(clickid == "19"){
+   if(	imgnum19 %2 == 0){
+   	document.getElementById("img19").src=scores[keys[19]].posterimg;
+   	}else{
+   	 document.getElementById("img19").src=scores[keys[19]].img;
+   	}
+   		imgnum19++;
+  }
+  
+
+  
   }
  	 </script>
  	 
