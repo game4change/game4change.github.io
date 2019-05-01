@@ -46,6 +46,17 @@ firebase.database().ref().child('startStatus').set(4);
 var ref = database.ref('devices');
 ref.on('value', gotData,errData);
 
+function findLongestWord(str) {
+  var strSplit = str.split(' ');
+  var longestWord = "";
+  for(var i = 0; i < strSplit.length; i++){
+    if(strSplit[i].length > longestWord.length){
+	longestWord = strSplit[i];
+     }
+  }
+  return longestWord;
+}
+
 function gotData(data){
 	 var scores = data.val();
 	 var keys = Object.keys(scores);
@@ -62,44 +73,52 @@ function gotData(data){
 	 for (var i = 0; i < keys.length; i++){
  	 	var k = keys[i];
  	 	index++;
-
- 	 	if(scores[k].issue != null && scores[k].issue.length < 4 ) {
+ 	 	var word;
+ 	 	var wordlength;
+ 	 	
+ 	 	if(scores[k].issue!= null){
+ 	 		word = findLongestWord(scores[k].issue);
+ 	 		wordlength = word.length;
+ 	 	}
+ 	 	
+ 	 	
+ 	 	if(scores[k].issue != null && wordlength < 4 ) {
  	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0103-back">  <div class="issue-poster-front style-0103-front">'+scores[k].issue + ' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		}
  		
- 		else if(scores[k].issue != null && scores[k].issue.length < 6 && (random45 % 2 == 1) ) {
+ 		else if(scores[k].issue != null && wordlength < 6 && (random45 % 2 == 1) ) {
  	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0405-back">  <div class="issue-poster-front style-0405-front">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		random45++;
  		}
  		
- 		else if(scores[k].issue != null && scores[k].issue.length < 6 && (random45 % 2 == 0) ) {
+ 		else if(scores[k].issue != null && wordlength < 6 && (random45 % 2 == 0) ) {
  	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0405-back-2">  <div class="issue-poster-front style-0405-front-2">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		random45++;
  		}
  		
- 		else if(scores[k].issue != null && scores[k].issue.length < 8 && (random67 % 2 == 1) ) {
+ 		else if(scores[k].issue != null && wordlength < 8 && (random67 % 2 == 1) ) {
  	 	poster.innerHTML += ('  <div class="poster-item">  <div class="issue-poster-back style-0607-back">  <div class="issue-poster-front style-0607-front"><br>'+scores[k].issue+'<br><b style="color: #D5FF3E">'+scores[k].issue+'</b><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+' </div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		random67++;
  		}
  		
- 		else if(scores[k].issue != null && scores[k].issue.length < 8 && (random67 % 2 == 0) ) {
+ 		else if(scores[k].issue != null && wordlength < 8 && (random67 % 2 == 0) ) {
  	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-0607-back-2"> <div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b></div>'+'<div class="issue-poster-front style-0607-front-2"><br>'+scores[k].issue+'<br><b style="color: #061C2E">'+scores[k].issue+'</b>'+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		random67++;
  		}
  		
- 		else if(scores[k].issue != null && scores[k].issue.length < 10 && (random89 % 2 == 0) ) {
+ 		else if(scores[k].issue != null && wordlength < 10 && (random89 % 2 == 0) ) {
  	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-0809-back-2"><div class="issue-poster-front style-0809-front-2"><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		random89++;
  		}
- 		else if(scores[k].issue != null && scores[k].issue.length < 10 && (random89 % 2 == 1) ) {
+ 		else if(scores[k].issue != null && wordlength < 10 && (random89 % 2 == 1) ) {
  	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-0809-back"><div class="issue-poster-front style-0809-front"><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  		random89++;
  		}
- 		else if(scores[k].issue != null && scores[k].issue.length < 12 ) {
+ 		else if(scores[k].issue != null && wordlength < 12 ) {
  	 	poster.innerHTML += ('  <div class="poster-item"> <div class="issue-poster-back style-12-back"><div class="issue-poster-front style-12-front"><br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'</div></div><div class="issue-name">'+scores[k].issue +'</div> </div>');
  	
  		}
- 		else if(scores[k].issue != null && scores[k].issue.length >= 12 ) {
+ 		else if(scores[k].issue != null && wordlength >= 12 ) {
  	 	poster.innerHTML += ('  <div class="poster-item"><div class="issue-poster-back style-1011-back"><div class="issue-poster-front style-1011-front">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+ '<b style="color: #D5FF3E">'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br>'+scores[k].issue+'<br></b>'+'</div></div><div class="issue-name">'+scores[k].issue+'</div> </div>');
 
  		}
@@ -142,7 +161,10 @@ function gotData(data){
 	 
 }
 
+
 }
+
+
 
 function errData(data){
 	 alert("ERROR!" );
