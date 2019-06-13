@@ -15,14 +15,16 @@ position: absolute;
 
 }
 
-img {
- zoom: 5%;
+.qr {
+ zoom: 4%;
   position: absolute;
-  top: 85%;
+  top: 80%;
   transition: opacity .5s ease-in;
 }
 
+/* 
 img + img { opacity: 0; }
+ */
 
 h2{
 
