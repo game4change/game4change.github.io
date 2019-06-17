@@ -30,7 +30,7 @@ img + img { opacity: 0; }
 
 <img class="qr" src="qr.png"> </img>
 
-<img style="position: absolute; zoom:63%; top: 30%; left: 3.5%" src="title.png"> </img>
+<img style="position: absolute; zoom:120%; top: 30%; left: 5%" src="title.png"> </img>
 
 <h3 style="position: absolute; color: white; font-family : sans-serif ;font-size: 20px; top: 90%; left:1%">www.etc.cmu.edu/projects/paradigm/ <h3>
 
@@ -54,6 +54,7 @@ img + img { opacity: 0; }
 <script  src="js/slick.min.js"></script>
 <script  src="js/index.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<embed    src="music/end.m4a" loop="false" hidden="true" autostart="true">
 
 <script>
   // Initialize Firebase
@@ -82,8 +83,8 @@ function gotData(data){
 	  var content = document.getElementById('slideshow');
      for (var i = 0; i < num; i++){
 	 	var k = keys[i];
- 	 	content.innerHTML += ('<img class="fade" style="position: absolute; left: 55%; top:20%; zoom: 75%"+ src="'+scores[k].img+'">');
- 	 	content.innerHTML += ('<h2 class="textfade" style="position: absolute; color: white; font-family : sans-serif ;font-size: 40px; top: 81%; left:67%">'+scores[k].issue+'</h2>');
+ 	 	//content.innerHTML += ('<img class="fade" style="position: absolute; left: 55%; top:20%; zoom: 75%"+ src="'+scores[k].img+'">');
+ 	 	content.innerHTML += ('<h2 class="textfade" style="position: absolute; color: red; font-family : sans-serif ;font-size: 77px; top: 36%; left:53%">'+scores[k].issue+'</h2>');
 
  	 	}
  	 	}
