@@ -47,16 +47,10 @@
     </div>
      <div  class="slider--item" id = "14" onclick="change(this.id)">
       </div>
-	<div   class="slider--item" id = "15" onclick="change(this.id)">
-    </div>
-     <div  class="slider--item" id = "16" onclick="change(this.id)">
-    </div>
-     <div  class="slider--item" id = "17" onclick="change(this.id)">
-    </div>
-     <div  class="slider--item" id = "18" onclick="change(this.id)">
+       <div  class="slider--item" id = "15" onclick="change(this.id)">
       </div>
-     <div  class="slider--item" id = "19" onclick="change(this.id)">
-    </div>
+
+
     </div>
   </div>
 </div>
@@ -108,7 +102,9 @@ function gotData(data){
 	var content14 = document.getElementById('14');
 	var content15 = document.getElementById('15');
 
-     for (var i = 0; i < 20; i++){
+
+
+     for (var i = 0; i < 16; i++){
 	 	var k = keys[i];
 
  	    if(i==0&& i<num){
@@ -130,9 +126,9 @@ function gotData(data){
  	 	else if(i==2&& i>=num){
  	  	content2.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- 		 else if(i==3&& i<num){
- 		 content3.innerHTML += ('<img id="img3" src="'+scores[k].img+'">');
- 		 }
+ 		else if(i==3&& i<num){
+ 	 content3.innerHTML += ('<img  id="img3" src="'+scores[k].img+'">');
+ 	 }
  	 	else if(i==3&& i>=num){
  	  	content3.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
@@ -143,14 +139,14 @@ function gotData(data){
  	  	content4.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  		else if(i==5&& i<num){
- 		 content5.innerHTML += ('<img id="img5" src="'+scores[k].posterimg+'">');
+ 		 content5.innerHTML += ('<img id="img5" src="'+scores[k].img+'">');
  	 	}
  	   	else if(i==5&& i>=num){
  	  	content5.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  	
  		else if(i==6&& i<num){
- 	 	content6.innerHTML += ('<img id="img6" src="'+scores[k].posterimg+'">');
+ 	 	content6.innerHTML += ('<img id="img6" src="'+scores[k].img+'">');
  	 	}
  	 	else if(i==6&& i>=num){
  	  	content6.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
@@ -168,14 +164,14 @@ function gotData(data){
  	  	content8.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  		else if(i==9&& i<num){
- 		 content9.innerHTML += ('<img id="img9" src="'+scores[k].posterimg+'">');
+ 		 content9.innerHTML += ('<img id="img9" src="'+scores[k].img+'">');
  	 	}
  	   	else if(i==9&& i>=num){
  	  	content9.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
  	
  		else if(i==10&& i<num){
- 	 	content10.innerHTML += ('<img id="img10" src="'+scores[k].posterimg+'">');
+ 	 	content10.innerHTML += ('<img id="img10" src="'+scores[k].img+'">');
  	 	}
  	 	else if(i==10&& i>=num){
  	  	content10.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
@@ -204,12 +200,13 @@ function gotData(data){
  	 	else if(i==14&& i>=num){
  	  	content14.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
- 		else if(i==15&& i<num){
- 		 content15.innerHTML += ('<img id="img14" src="'+scores[k].posterimg+'">');
- 	 	}
- 	   	else if(i==15&& i>=num){
+ 	 	else if(i==15&& i<num){
+ 		 content15.innerHTML += ('<img id="img15" src="'+scores[k].img+'">');
+ 		 }
+ 	 	else if(i==15&& i>=num){
  	  	content15.innerHTML += ('<img src="https://pbs.twimg.com/profile_images/425346549032300544/n3-1Z5OV_400x400.png">');
  	 	}
+ 	
 	 
  	 }
 
@@ -245,7 +242,9 @@ function errData(data){
  	 var imgnum14 = 0;
  	 var imgnum15 = 0;
  	 
+ 	 
  function change(clickid){
+ 	
    if(clickid == "0"){
    if(imgnum0 %2 == 0){
    	document.getElementById("img0").src=scores[keys[0]].posterimg;
@@ -273,15 +272,14 @@ function errData(data){
   
   if(clickid == "3"){
    if(	imgnum3 %2 == 0){
-   	document.getElementById("img3").src=scores[keys[3]].posterimg;
+   	document.getElementById("img3").src= scores[keys[3]].posterimg;
    	}else{
-   	 document.getElementById("img3").src=scores[keys[3]].img;
+   	 document.getElementById("img3").src= scores[keys[3]].img;
    	}
    		imgnum3++;
   }
     
-  
-    if(clickid == "4"){
+  if(clickid == "4"){
    if(	imgnum4 %2 == 0){
    	document.getElementById("img4").src=scores[keys[4]].posterimg;
    	}else{
@@ -290,7 +288,7 @@ function errData(data){
    		imgnum4++;
   }
   
-  if(clickid == "5"){
+    if(clickid == "5"){
    if(	imgnum5 %2 == 0){
    	document.getElementById("img5").src=scores[keys[5]].posterimg;
    	}else{
@@ -298,7 +296,7 @@ function errData(data){
    	}
    		imgnum5++;
   }
-    
+  
   if(clickid == "6"){
    if(	imgnum6 %2 == 0){
    	document.getElementById("img6").src=scores[keys[6]].posterimg;
@@ -307,8 +305,8 @@ function errData(data){
    	}
    		imgnum6++;
   }
-  
-   if(clickid == "7"){
+    
+  if(clickid == "7"){
    if(	imgnum7 %2 == 0){
    	document.getElementById("img7").src=scores[keys[7]].posterimg;
    	}else{
@@ -317,7 +315,7 @@ function errData(data){
    		imgnum7++;
   }
   
-    if(clickid == "8"){
+   if(clickid == "8"){
    if(	imgnum8 %2 == 0){
    	document.getElementById("img8").src=scores[keys[8]].posterimg;
    	}else{
@@ -380,15 +378,17 @@ function errData(data){
    		imgnum14++;
   }
   
-    if(clickid == "15"){
+      if(clickid == "15"){
+      	
    if(	imgnum15 %2 == 0){
    	document.getElementById("img15").src=scores[keys[15]].posterimg;
    	}else{
    	 document.getElementById("img15").src=scores[keys[15]].img;
    	}
-   		imgnum15++;
+   		 imgnum15++;  
   }
   
+ 
   
   }
  	 </script>
